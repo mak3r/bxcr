@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<ApprendaGridDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         xmlns="http://schemas.apprenda.com/ApprendaGridDefinitions"
+
+
+xsi:schemaLocation="http://schemas.apprenda.com/ApprendaGridDefinitions 
+
+http://127.0.0.1:7070/ApprendaGridDefinition/ApprendaGridDefinitions.xsd">
+
+  <ApprendaGrid licenseFilePath=""
+                enableBilling="false"
+                useApprendaBillingProvider="false"
+                runtimeDriveLetter="C"
+                repositoryHost="apprwin"
+                enforceSslForAllPages="false"
+                useApprendaHostFileExtension="false"
+                signingCertificatePath=""
+                signingCertificatePassword=""
+				>
+
+    <CompanyInfo name="Apprenda Bxcr"
+                 alias="developer"
+                 address="219 Way"
+                 city="Troy"
+                 state="NY"
+                 zip="12180"
+                 country="United States of America"
+                 phoneNumber="555-5555"
+                 adminFirstName="Bxcr"
+                 adminLastName="Admin"
+                 adminEmail="admin@bxcr.apprenda"
+                 adminPassword="password" />
+
+    <EmailConfig useFreeCloudSolution="true"></EmailConfig>
+
+    <WindowsServiceConfig>
+      <AdminUserAccount>
+        <UserAccount domain="apprwin" username="vagrant" password="vagrant" />
+      </AdminUserAccount>
+      <SystemUserAccount>
+        <UserAccount domain="apprwin" username="vagrant" password="vagrant" />
+      </SystemUserAccount>
+    </WindowsServiceConfig>
+	
+	<LinuxConfig 
+    adminUser="vagrant" 
+    adminPassword="vagrant" 
+    appsRepositoryMount="/apprenda/repo/apps" 
+    systemRepositoryMount="/apprenda/repo/sys" 
+    enableWorkloadAccountAutoCreation="true"  
+    defaultWorkloadAccount="apprenda"
+    elevationMethod="sudo"
+    />
+    
+    <Clouds>
+      <Cloud name="bxcr"
+             description="Small Vagrant Cloud"
+             rootUrl="http://apprenda.bxcr"
+             cloudType="Private"
+             infrastructureProvider="Vagrant"
+             cachePorts="9000"
+             cacheSize="100"
+             cachePassword="@bxcr219"
+             generateSslCertificate="true"
+             sslCertificatePath=""
+             sslCertificatePassword="">
+        <Servers>
+          <Server hostName="apprwin">
+            <Roles>
+              <Role name="web"/>
+              <Role name="app"/>
+              <Role name="loadManager"/>
+              <Role name="coordination"/>
+              <Role name="cache"/>
+            </Roles>
+          </Server>
+        </Servers>
+        <DatabaseServerInstances>
+          <DatabaseServerInstance name="apprwin\MSSQLSERVER"
+                                  adminUser="bxcr"
+                                  adminPassword="password"
+                                  totalMemoryMB="12270"
+                                  totalCpuMHz="27136"
+                                  totalStorageMB="10240"
+                                  coreServer="true"
+                                  fqdn="apprwin"
+                                  type="SQL Server" />
+  
+        </DatabaseServerInstances>
+      </Cloud>
+    </Clouds>
+
+  </ApprendaGrid>
+</ApprendaGridDefinitions>

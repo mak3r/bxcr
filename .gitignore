@@ -1,0 +1,3 @@
+chef/berks-cookbooks
+chef/berks-cookbooks/Berksfile.lock
+.vagrant

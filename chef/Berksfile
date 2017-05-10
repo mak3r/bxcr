@@ -1,0 +1,10 @@
+source "https://supermarket.chef.io"
+
+cookbook 'iis'
+cookbook 'ms_dotnet'
+cookbook 'chocolatey'
+cookbook 'webpi'
+cookbook 'windows'
+cookbook 'sql_server'
+cookbook 'seven_zip'
+cookbook 'ntp'
