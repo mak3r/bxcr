@@ -77,7 +77,7 @@ http://127.0.0.1:7070/ApprendaGridDefinition/ApprendaGridDefinitions.xsd">
           </Server>
         </Servers>
         <DatabaseServerInstances>
-          <DatabaseServerInstance name="apprwin\MSSQLSERVER"
+          <DatabaseServerInstance name="apprwin"
                                   adminUser="bxcr"
                                   adminPassword="password"
                                   totalMemoryMB="12270"
