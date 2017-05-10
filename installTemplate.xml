@@ -29,7 +29,7 @@ http://127.0.0.1:7070/ApprendaGridDefinition/ApprendaGridDefinitions.xsd">
                  phoneNumber="555-5555"
                  adminFirstName="Bxcr"
                  adminLastName="Admin"
-                 adminEmail="admin@bxcr.apprenda"
+                 adminEmail="admin@apprendabxcr.com"
                  adminPassword="password" />
 
     <EmailConfig useFreeCloudSolution="true"></EmailConfig>
