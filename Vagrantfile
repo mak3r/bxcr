@@ -32,6 +32,8 @@ Vagrant.configure(2) do |config|
       chef.add_recipe "apprenda::setup"
     end
     node.vm.provision 'shell', path: "./ps/Configure-SQL.ps1"
+    node.vm.provision 'shell', path: "./ps/Download-Apprenda.ps1"
+    node.vm.provision 'shell', path: "./ps/Install-Apprenda.ps1"
   end
 
   config.vm.define "apprenda-linux", autostart: false do |node|
