@@ -14,7 +14,7 @@ These are the versions this has been tested on, but it _should_ work with any re
 2. From the `chef` directory of the checkout, run `berks vendor`.
 3. Run `vagrant up` from the root of the code checkout. If this is your first time running it, it may take some time as Vagrant must pull a few gigabytes of base images.
 4. After `vagrant up` has completed, you can remote into the machine and run the Apprenda Cloud Platform installer via command line with the following arguments to use our default install template:  
-```C:\vagrant\<ACP package>\Installer\Apprenda.Wizard.exe install -i C:\vagrant\<ACP Package>\installTemplate.xml -autoRepair```
+```C:\vagrant\<ACP package>\Installer\Apprenda.Wizard.exe install -i C:\vagrant\installTemplate.xml -autoRepair```
 5. Add an entry to your system hosts file to enable you to access the VM by name:  
 ```172.16.0.10     apprenda.bxcr```
 6. Log on to your new instance at `https://apps.apprenda.bxcr`. The default account is `admin@bxcr.apprenda` with a password of `password`.
