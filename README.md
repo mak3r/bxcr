@@ -17,4 +17,4 @@ These are the versions this has been tested on, but it _should_ work with any re
 ```C:\vagrant\<ACP package>\Installer\Apprenda.Wizard.exe install -i C:\vagrant\installTemplate.xml -autoRepair```
 5. Add an entry to your system hosts file to enable you to access the VM by name:  
 ```172.16.0.10     apprenda.bxcr```
-6. Log on to your new instance at `https://apps.apprenda.bxcr`. The default account is `admin@bxcr.apprenda` with a password of `password`.
+6. Log on to your new instance at `https://apps.apprenda.bxcr`. The default account is `bxcr@apprenda.com` with a password of `password`.
