@@ -15,7 +15,7 @@ Vagrant.configure(2) do |config|
       vb.gui = false
       vb.memory = 4096
     end
-
+    node.vm.provision 'shell', path: "./scripts/ps/Uninstall-Bitvise.ps1"
     node.vm.provision 'chef_solo' do |chef|
       chef.version = '12.19.33'
       chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
@@ -56,6 +56,7 @@ Vagrant.configure(2) do |config|
         }
       }
       chef.add_recipe "apprenda_linux::centos7"
+      chef.add_recipe "apprenda_linux::docker"
     end
     node.vm.provision 'shell', path: './scripts/sh/installapprenda.sh'
   end
