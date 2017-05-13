@@ -1,4 +1,5 @@
 include_recipe "chocolatey"
+include_recipe "::installssh"
 include_recipe "::disableupdates"
 include_recipe "::installnetfx3"
 include_recipe "iis"
