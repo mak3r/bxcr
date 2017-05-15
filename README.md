@@ -5,7 +5,7 @@ bxcr is a small Apprenda Cloud Platform environment that can be brought up using
 ## Prerequisites
 
 These are the versions this has been tested on, but it _should_ work with any recent version of Vagrant and VirtualBox
-* Vagrant 1.9.4 (with Vagrant Hostmanager Plugin via `vagrant plugin install vagrant-hostmanager`)
+* Vagrant 1.9.4
 * VirtualBox 5.1.22
 
 ## Usage
