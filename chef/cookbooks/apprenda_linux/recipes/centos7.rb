@@ -9,7 +9,7 @@ bash 'init' do
 
       sudo sed -i '1d' /etc/hosts
 
-      sudo printf '#{loadmanagerip}\tapprenda.bxcr\n#{loadmanagerip}\tapps.apprenda.bxcr\n#{loadmanagerip}\twww.apprenda.bxcr\n#{loadmanagerip}\tapi.apprenda.bxcr\n' >> /etc/hosts
+      sudo printf '#{loadmanagerip}\tapprwin\n#{loadmanagerip}\tapprenda.bxcr\n#{loadmanagerip}\tapps.apprenda.bxcr\n#{loadmanagerip}\twww.apprenda.bxcr\n#{loadmanagerip}\tapi.apprenda.bxcr\n' >> /etc/hosts
       sudo mkdir -p /apprenda/repo/sys /apprenda/repo/apps
       sudo printf '/- /etc/auto.apprenda' | sudo tee /etc/auto.master
       sudo touch /etc/auto.apprenda

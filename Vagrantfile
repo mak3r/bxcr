@@ -1,6 +1,4 @@
 Vagrant.configure(2) do |config|
-  config.hostmanager.enabled = true
-  config.hostmanager.manage_guest = true
 
   config.vm.define "apprenda-windows", primary: true do |node|
     node.vm.box = 'opentable/win-2012r2-standard-amd64-nocm'
@@ -13,7 +11,7 @@ Vagrant.configure(2) do |config|
     node.vm.provider :virtualbox do |vb|
       vb.name = 'apprwin'
       vb.gui = false
-      vb.memory = 4096
+      vb.memory = 7224
     end
     node.vm.provision 'shell', path: "./scripts/ps/Uninstall-Bitvise.ps1"
     node.vm.provision 'chef_solo' do |chef|

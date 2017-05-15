@@ -1,10 +1,12 @@
 loadmanagerip = "172.16.0.10"
+linuxnodeip = "172.16.0.11"
 
 powershell_script "Update windows hostfile" do
     code <<-EOH
 
     $hostsPath = "C:\\Windows\\System32\\drivers\\etc\\hosts"
-
+    Add-Content $hostsPath "`n#{loadmanagerip}`tapprwin"
+    Add-Content $hostsPath "`n#{linuxnodeip}`tapprlin"
     Add-Content $hostsPath "`n#{loadmanagerip}`tapprenda.bxcr"
     Add-Content $hostsPath "`n#{loadmanagerip}`tapps.apprenda.bxcr"
     Add-Content $hostsPath "`n#{loadmanagerip}`twww.apprenda.bxcr"

@@ -3,8 +3,8 @@
 cd /apprenda/repo/sys/6.8.0/System/Nodes/RPM && ls | xargs rpm -Uvh
 /apprenda/apprenda-updater/bin/configure-node.sh -a /apprenda/repo/apps -s /apprenda/repo/sys -h apprlin
 
-echo "Bringing Linux node online, please wait..."
-sleep 30
+echo "Waiting 60 seconds for services to come online..."
+sleep 60
 OUT="$(curl -X POST -k -s --header "Content-type: application/json" -d '{"username":"bxcr@apprenda.com","password":"password"}' https://apps.apprenda.bxcr/authentication/api/v1/sessions/soc | jq '.apprendaSessionToken')"
 temp="${OUT%\"}"
 temp="${temp#\"}"

@@ -22,7 +22,16 @@ These are the versions this has been tested on, but it _should_ work with any re
 
 ## Notes
 
-For information on how to use Apprenda, please see our documentation at https://docs.apprenda.com. 
-Information on using Vagrant can be found at https://www.vagrantup.com/docs/index.html.
+* For information on how to use Apprenda, please see our documentation at https://docs.apprenda.com. 
 
-You can SSH to either the Windows or Linux machine by using `vagrant ssh` and the machine name, for example, `vagrant ssh apprenda-windows` or `vagrant ssh apprenda-linux`. For a graphical session, you can `vagrant rdp apprenda-windows`. The machine username and password for both nodes is `vagrant`.
+* Information on using Vagrant can be found at https://www.vagrantup.com/docs/index.html.
+
+* You can SSH to either the Windows or Linux machine by using `vagrant ssh` and the machine name, for example, `vagrant ssh apprenda-windows` or `vagrant ssh apprenda-linux`. For a graphical session, you can `vagrant rdp apprenda-windows`. The machine username and password for both nodes is `vagrant`.
+
+## Questions or Problems?
+
+Please file a GitHub issue for any questions you may have, or problems you encounter using `bxcr`.
+
+## Contributing
+
+We gladly accept pull requests! Requests will be reviewed by our team. We encourage you to use this as a base for further automation with your own ACP installs.
