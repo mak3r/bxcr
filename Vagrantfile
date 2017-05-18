@@ -1,21 +1,17 @@
 Vagrant.configure(2) do |config|
 
   config.vm.define "apprenda-windows", primary: true do |node|
-    node.vm.box = 'opentable/win-2012r2-standard-amd64-nocm'
+    node.vm.box = 'mwrock/Windows2012R2'
     node.vm.communicator = 'winrm'
-    node.winrm.transport = 'plaintext'
-    node.winrm.basic_auth_only = true
     node.vm.network 'forwarded_port', host: 33199, guest: 3389
     node.vm.network 'private_network', ip: '172.16.0.10'
     node.vm.hostname = 'apprwin'
     node.vm.provider :virtualbox do |vb|
       vb.name = 'apprwin'
       vb.gui = false
-      vb.memory = 7224
+      vb.memory = 4096
     end
-    node.vm.provision 'shell', path: "./scripts/ps/Uninstall-Bitvise.ps1"
     node.vm.provision 'chef_solo' do |chef|
-      chef.version = '12.19.33'
       chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
       chef.json = {
         'sql_server' => {
@@ -44,7 +40,6 @@ Vagrant.configure(2) do |config|
     end
 
     node.vm.provision 'chef_solo' do |chef|
-      chef.channel = '12.19.33'
       chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
       chef.json = {
         'apprenda_linux' => {

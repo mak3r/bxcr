@@ -8,6 +8,8 @@ These are the versions this has been tested on, but it _should_ work with any re
 * Vagrant 1.9.4
 * VirtualBox 5.1.22
 
+You should have at least *16 GB* of RAM available to run these boxes.
+
 ## Usage
 1. Clone this repository.
 2. Run `vagrant up` from the root of the code checkout. If this is your first time running it, it may take some time as Vagrant must pull a few gigabytes of base images.
@@ -21,6 +23,8 @@ These are the versions this has been tested on, but it _should_ work with any re
 5. Log on to your new instance at `https://apps.apprenda.bxcr`. The default account is `bxcr@apprenda.com` with a password of `password`.
 
 ## Notes
+
+* "Why did Chef randomly fail to install something on Windows?" Let us know the details, but you can generally re-run the provisioning step with `vagrant provision` to retry.
 
 * For information on how to use Apprenda, please see our documentation at https://docs.apprenda.com. 
 

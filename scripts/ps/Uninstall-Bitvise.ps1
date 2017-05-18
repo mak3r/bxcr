@@ -1,1 +1,0 @@
-& "C:\Program Files\Bitvise SSH Server\uninst.exe" "Bitvise SSH Server" -unat

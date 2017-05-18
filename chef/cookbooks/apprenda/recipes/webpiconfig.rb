@@ -1,10 +1,5 @@
 include_recipe "webpi"
 
-webpi_product 'IIS7' do
-    accept_eula true
-    action :install
-end
-
 webpi_product 'ARR' do
     accept_eula true
     action :install
