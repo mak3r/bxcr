@@ -62,9 +62,9 @@ http://127.0.0.1:7070/ApprendaGridDefinition/ApprendaGridDefinitions.xsd">
              cachePorts="9000"
              cacheSize="100"
              cachePassword="@bxcr219"
-             generateSslCertificate="true"
-             sslCertificatePath=""
-             sslCertificatePassword="">
+             generateSslCertificate="false"
+             sslCertificatePath="C:\users\vagrant\apprendassl.pfx"
+             sslCertificatePassword="password">
         <Servers>
           <Server hostName="apprwin">
             <Roles>

@@ -11,6 +11,8 @@ Vagrant.configure(2) do |config|
       vb.gui = false
       vb.memory = 4096
     end
+    node.vm.provision 'file', source: './certs/root.cer', destination: 'C:\\users\\vagrant\\root.cer'
+    node.vm.provision 'file', source: './certs/apprendassl.pfx', destination: 'C:\\users\\vagrant\\apprendassl.pfx'
     node.vm.provision 'chef_solo' do |chef|
       chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
       chef.json = {
@@ -52,5 +54,32 @@ Vagrant.configure(2) do |config|
       chef.add_recipe "apprenda_linux::docker"
     end
     node.vm.provision 'shell', path: './scripts/sh/installapprenda.sh'
+  end
+
+  config.vm.define "apprenda-k8s", autostart: false do |node|
+    node.vm.box = 'bento/centos-7.3'
+    node.vm.hostname = 'apprk8s'
+    node.vm.network 'private_network', ip: '172.16.0.12'
+    node.vm.provider :virtualbox do |vb|
+      vb.name = 'apprk8s'
+      vb.memory = 2048
+    end
+    node.vm.provision 'chef_solo' do |chef|
+      chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
+      chef.json = {
+        'apprenda_linux' => {
+          'hostname' => 'apprk8s',
+          'loadmanagerip' => '172.16.0.10',
+          'loadmanagerhostname' => 'apprwin'
+        }
+      }
+      chef.add_recipe "apprenda_linux::centos7"
+    end
+    node.vm.provision "file", source: './files/kismatic-cluster.yaml', destination: '~/kismatic-cluster.yaml'
+    node.vm.provision "file", source: './certs/root.cer', destination: '~/ca.pem'
+    node.vm.provision "file", source: './certs/privkey.pem', destination: '~/ca-key.pem'
+    node.vm.provision 'shell', path: './scripts/sh/movecerts.sh'
+    node.vm.provision 'shell', path: './scripts/sh/installkismatic.sh', privileged: true
+    node.vm.provision 'shell', path: './scripts/sh/joincluster.sh'
   end
 end

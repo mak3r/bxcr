@@ -4,7 +4,8 @@ loadmanagerhostname = node["apprenda_linux"]["loadmanagerhostname"]
 
 bash 'init' do
   code <<-EOH
-      sudo yum install -y libcgroup libcgroup-tools iptables-services cifs-utils unzip openssh-clients autofs
+      sudo yum install -y epel-release
+      sudo yum install -y libcgroup libcgroup-tools iptables-services cifs-utils unzip openssh-clients autofs sshpass
       sudo service cgconfig start
 
       sudo sed -i '1d' /etc/hosts
