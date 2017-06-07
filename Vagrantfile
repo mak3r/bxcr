@@ -60,6 +60,8 @@ Vagrant.configure(2) do |config|
     node.vm.box = 'bento/centos-7.3'
     node.vm.hostname = 'apprk8s'
     node.vm.network 'private_network', ip: '172.16.0.12'
+    node.vm.network 'forwarded_port', host: 8081, guest: 8080
+    node.vm.network 'forwarded_port', host: 6444, guest: 6443
     node.vm.provider :virtualbox do |vb|
       vb.name = 'apprk8s'
       vb.memory = 2048
