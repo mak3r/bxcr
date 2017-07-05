@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /apprenda/repo/sys/7.0.0/System/Nodes/RPM && ls | xargs rpm -Uvh
+cd /apprenda/repo/sys/7.1.0/System/Nodes/RPM && ls | xargs rpm -Uvh
 /apprenda/apprenda-updater/bin/configure-node.sh -a /apprenda/repo/apps -s /apprenda/repo/sys -h apprlin
 
 echo "Waiting 60 seconds for services to come online..."
