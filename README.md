@@ -13,8 +13,8 @@ You should have at least *16 GB* of RAM available to run these boxes.
 ## Usage
 1. Clone this repository.
 2. Run `vagrant up` from the root of the code checkout. If this is your first time running it, it may take some time as Vagrant must pull a few gigabytes of base images.
-3. To bring up a Linux node for your grid, run `vagrant up apprenda-linux`.
-4. To add a Kubernetes cluster to your grid, run `vagrant up apprenda-k8s`.
+3. To add a Linux node to your Apprenda Cloud, run `vagrant up apprenda-linux`.
+4. To add a Kubernetes cluster to your Apprenda Cloud, run `vagrant up apprenda-k8s`.
 5. Add entries to your system hosts file to enable you to access the VM by name:  
 ```
 172.16.0.10     apprenda.bxcr
