@@ -1,7 +1,7 @@
 Vagrant.configure(2) do |config|
 
   config.vm.define "apprenda-windows", primary: true do |node|
-    node.vm.box = 'mwrock/Windows2012R2'
+    node.vm.box = 'apprenda/windows2012r2'
     node.vm.communicator = 'winrm'
     node.vm.network 'forwarded_port', host: 33199, guest: 3389
     node.vm.network 'private_network', ip: '172.16.0.10'
