@@ -7,5 +7,5 @@ TOKEN="ApprendaSessionToken: ${temp}"
 echo "Attempting to join cluster to ACP grid..."
 curl -X POST -k -s --header "Content-type: application/json" \
  --header "${TOKEN}" \
- -d '{"name": "bxcrk8s", "url": "https://apprk8s:6443/", "cloudid": 1, "username": "admin", "password": "bxcrk8spass", "gatewayhostnames": "apprk8s"}' \
+ -d '{"name": "bxcrk8s", "url": "https://apprk8s:6443/", "cloudid": 1, "username": "admin", "password": "bxcrk8spass", "gatewayhostnames": "apprk8s", "heapsterUrl": "http://apprk8s:31382/" }' \
  https://apps.apprenda.bxcr/soc/api/v1/clusters | jq .

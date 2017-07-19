@@ -1,6 +1,6 @@
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 
-$url = "http://docs.apprenda.com/sites/default/files/Apprenda-7.1.0.zip"
+$url = "http://docs.apprenda.com/sites/default/files/Apprenda-7.1.1.zip"
 $output = "C:\Apprenda.zip"
 if (!(Test-Path -Path C:\Apprenda)) {
   Write-Output "Downloading Apprenda, please wait..."
