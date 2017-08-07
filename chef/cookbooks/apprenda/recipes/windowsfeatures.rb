@@ -9,16 +9,7 @@ end
 windows_feature "NetFx4Extended-ASPNET45" do
     action :install
 end
-windows_feature "IIS-WebServerManagementTools" do
-    action :install
-end
-windows_feature "IIS-ManagementConsole" do
-    action :install
-end
 windows_feature "IIS-ApplicationDevelopment" do
-    action :install
-end
-windows_feature "IIS-WebServer" do
     action :install
 end
 windows_feature "IIS-Security" do
