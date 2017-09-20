@@ -1,0 +1,9 @@
+  563  cd /c/dev/mak3r_bxcr/chef
+  534  chef generate cookbook apprenda_ad
+  563  cd /c/dev/mak3r_bxcr
+  549  berks install
+  556  berks vendor ../../berks-cookbooks/
+  559  cd chef
+  562  knife upload -z ./cookbooks/ ./berks-cookbooks/
+  563  cd /c/dev/mak3r_bxcr
+  565  vagrant up

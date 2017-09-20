@@ -1,0 +1,128 @@
+{
+  "all_files": [
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "checksum": "e2366a0aac3f2c8bf010d5509a4a0dc0",
+      "specificity": "default"
+    },
+    {
+      "name": ".kitchen.yml",
+      "path": ".kitchen.yml",
+      "checksum": "848ac549c4b73736bc2ec19544a78f6f",
+      "specificity": "default"
+    },
+    {
+      "name": "Berksfile",
+      "path": "Berksfile",
+      "checksum": "796980d7c355b7f579d8b3bcdfe282ab",
+      "specificity": "default"
+    },
+    {
+      "name": "Berksfile.lock",
+      "path": "Berksfile.lock",
+      "checksum": "8a9dd4c800cf369cbefc4407cd2bf0e1",
+      "specificity": "default"
+    },
+    {
+      "name": "chefignore",
+      "path": "chefignore",
+      "checksum": "07b69a0a9a5e7efee4e379fedc82189b",
+      "specificity": "default"
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "checksum": "f7d18ead3ed46332686812e071d645f4",
+      "specificity": "default"
+    },
+    {
+      "name": "metadata.rb",
+      "path": "metadata.rb",
+      "checksum": "03e2fb81fec0bf50af18e92d13e38219",
+      "specificity": "default"
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "checksum": "c4cdfe0c75a1b85df341ce5b4588b20a",
+      "specificity": "default"
+    },
+    {
+      "name": "recipes/default.rb",
+      "path": "recipes/default.rb",
+      "checksum": "e0651e6ed7a62f461813bffb37142ee2",
+      "specificity": "default"
+    },
+    {
+      "name": "recipes/users.rb",
+      "path": "recipes/users.rb",
+      "checksum": "70c645928cdf9164b653aeac99c182fa",
+      "specificity": "default"
+    },
+    {
+      "name": "spec/spec_helper.rb",
+      "path": "spec/spec_helper.rb",
+      "checksum": "47e80af1de44f25168e05c2cccbfe33a",
+      "specificity": "default"
+    },
+    {
+      "name": "spec/default_spec.rb",
+      "path": "spec/unit/recipes/default_spec.rb",
+      "checksum": "61f9e183acc2ca9f8eb846a37ab85d0e",
+      "specificity": "default"
+    },
+    {
+      "name": "test/default_test.rb",
+      "path": "test/smoke/default/default_test.rb",
+      "checksum": "296ab287b1835e89b3547dcc426aabb0",
+      "specificity": "default"
+    }
+  ],
+  "metadata": {
+    "name": "apprenda_ad",
+    "description": "Installs/Configures apprenda_ad",
+    "long_description": "Installs/Configures apprenda_ad",
+    "maintainer": "The Authors",
+    "maintainer_email": "you@example.com",
+    "license": "All Rights Reserved",
+    "platforms": {
+
+    },
+    "dependencies": {
+
+    },
+    "providing": {
+      "apprenda_ad": ">= 0.0.0",
+      "apprenda_ad::users": ">= 0.0.0"
+    },
+    "attributes": {
+
+    },
+    "recipes": {
+      "apprenda_ad": "",
+      "apprenda_ad::users": ""
+    },
+    "version": "0.1.0",
+    "source_url": "",
+    "issues_url": "",
+    "privacy": false,
+    "chef_versions": [
+      [
+        ">= 12.1"
+      ]
+    ],
+    "ohai_versions": [
+
+    ],
+    "gems": [
+
+    ]
+  },
+  "version": "0.1.0",
+  "name": "apprenda_ad-0.1.0",
+  "cookbook_name": "apprenda_ad",
+  "frozen?": false,
+  "chef_type": "cookbook_version",
+  "json_class": "Chef::CookbookVersion"
+}

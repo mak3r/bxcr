@@ -1,6 +1,27 @@
 Vagrant.configure(2) do |config|
 
-  config.vm.define "apprenda-windows", primary: true do |node|
+  config.vm.define "apprenda-ad", primary: true do |node|
+    node.vm.box = 'apprenda/windows2012r2'
+    node.vm.communicator = 'winrm'
+    node.vm.network 'forwarded_port', host: 33389, guest: 3389
+    node.vm.network 'private_network', ip: '172.16.0.13'
+    node.vm.hostname = 'apprad'
+    node.vm.provider :virtualbox do |vb|
+      vb.name = 'apprad'
+      vb.gui = false
+      vb.memory = 2048
+    end
+    node.vm.provision 'file', source: './certs/root.cer', destination: 'C:\\users\\vagrant\\root.cer'
+    node.vm.provision 'file', source: './certs/apprendassl.pfx', destination: 'C:\\users\\vagrant\\apprendassl.pfx'
+    node.vm.provision 'chef_solo' do |chef|
+      chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
+	  chef.add_recipe "windows_ad::default"
+      chef.add_recipe "apprenda_ad::default"
+	  chef.add_recipe "apprenda_ad::users"
+    end
+  end  
+  
+  config.vm.define "apprenda-windows", autostart: false do |node|
     node.vm.box = 'apprenda/windows2012r2'
     node.vm.communicator = 'winrm'
     node.vm.network 'forwarded_port', host: 33199, guest: 3389
@@ -31,6 +52,7 @@ Vagrant.configure(2) do |config|
     node.vm.provision 'shell', path: "./scripts/ps/Download-Apprenda.ps1"
     node.vm.provision 'shell', path: "./scripts/ps/Install-Apprenda.ps1"
   end
+  
 
   config.vm.define "apprenda-linux", autostart: false do |node|
     node.vm.box = 'bento/centos-7.3'

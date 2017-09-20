@@ -8,6 +8,7 @@ DEPENDENCIES
   sql_server
   webpi
   windows
+  windows_ad
 
 GRAPH
   chocolatey (1.2.0)
@@ -27,3 +28,5 @@ GRAPH
     windows (>= 2.0)
   windows (3.0.5)
     ohai (>= 4.0.0)
+  windows_ad (0.5.4)
+    windows (>= 0.0.0)
