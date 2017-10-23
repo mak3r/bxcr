@@ -1,6 +1,32 @@
 Vagrant.configure(2) do |config|
 
-  config.vm.define "apprenda-windows", primary: true do |node|
+  file_to_disk = './tmp/visual_studio.vdi'
+  
+  config.vm.define "apprenda-bamboo", primary: true do |node|
+    node.vm.box = 'apprenda/windows2012r2'
+    node.vm.communicator = 'winrm'
+    node.vm.network 'private_network', ip: '172.16.0.13'
+    node.vm.hostname = 'apprbmb'
+	node.vm.synced_folder "/", "/srv/vagrant/windows"
+    node.vm.provider :virtualbox do |vb|
+      vb.name = 'apprbmb'
+      vb.gui = false
+      vb.memory = 4096
+      # Add a second drive for installing visual studio as an agent
+      unless File.exist?(file_to_disk)
+	    vb.customize ['createhd', '--filename', file_to_disk, '--size', 30 * 1024]
+        vb.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+	  end
+    end
+	
+    node.vm.provision 'shell', path: "./scripts/ps/Windows-Prep.ps1"
+    node.vm.provision 'shell', path: "./scripts/ps/Install-Java.ps1"
+    node.vm.provision 'shell', path: "./scripts/ps/Install-Git.ps1"	
+    node.vm.provision 'shell', path: "./scripts/ps/Install-Atlassian-SDK.ps1"		
+    node.vm.provision 'shell', path: "./scripts/ps/Java-Keystore-Add-Certs.ps1"		
+  end
+  
+  config.vm.define "apprenda-windows", autostart: false do |node|
     node.vm.box = 'apprenda/windows2012r2'
     node.vm.communicator = 'winrm'
     node.vm.network 'forwarded_port', host: 33199, guest: 3389
