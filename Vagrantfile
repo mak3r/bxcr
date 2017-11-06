@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
     node.vm.provision 'shell', path: "./scripts/ps/Install-Java.ps1"
     node.vm.provision 'shell', path: "./scripts/ps/Install-Git.ps1"	
     node.vm.provision 'shell', path: "./scripts/ps/Install-Atlassian-SDK.ps1"		
-    node.vm.provision 'shell', path: "./scripts/ps/Java-Keystore-Add-Certs.ps1"		
+    node.vm.provision 'shell', path: "./scripts/ps/Java-Keystore-Add-Certs.ps1"	
   end
   
   config.vm.define "apprenda-windows", autostart: false do |node|
@@ -72,6 +72,30 @@ Vagrant.configure(2) do |config|
       chef.json = {
         'apprenda_linux' => {
           'hostname' => 'apprlin',
+          'loadmanagerip' => '172.16.0.10',
+          'loadmanagerhostname' => 'apprwin'
+        }
+      }
+      chef.add_recipe "apprenda_linux::centos7"
+      chef.add_recipe "apprenda_linux::docker"
+    end
+    node.vm.provision 'shell', path: './scripts/sh/installapprenda.sh'
+  end
+
+  config.vm.define "apprenda-linux2", autostart: false do |node|
+    node.vm.box = 'bento/centos-7.3'
+    node.vm.hostname = 'apprlin2'
+    node.vm.network 'private_network', ip: '172.16.0.14'
+    node.vm.provider :virtualbox do |vb|
+      vb.name = 'apprlin2'
+      vb.memory = 2048
+    end
+
+    node.vm.provision 'chef_solo' do |chef|
+      chef.cookbooks_path = ['chef/berks-cookbooks', 'chef/cookbooks']
+      chef.json = {
+        'apprenda_linux' => {
+          'hostname' => 'apprlin2',
           'loadmanagerip' => '172.16.0.10',
           'loadmanagerhostname' => 'apprwin'
         }
