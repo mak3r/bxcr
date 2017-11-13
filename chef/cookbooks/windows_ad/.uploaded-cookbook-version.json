@@ -1,0 +1,96 @@
+{
+  "all_files": [
+    {
+      "name": "chefignore",
+      "path": "chefignore",
+      "checksum": "07b69a0a9a5e7efee4e379fedc82189b",
+      "specificity": "default"
+    },
+    {
+      "name": "LICENSE",
+      "path": "LICENSE",
+      "checksum": "f7d18ead3ed46332686812e071d645f4",
+      "specificity": "default"
+    },
+    {
+      "name": "metadata.json",
+      "path": "metadata.json",
+      "checksum": "e2bf8077908268431a3b6ecbc5c0f571",
+      "specificity": "default"
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "checksum": "bcf8597fc543aaf637df850aaf4cdf32",
+      "specificity": "default"
+    },
+    {
+      "name": "recipes/default.rb",
+      "path": "recipes/default.rb",
+      "checksum": "344f4344cc01914a7aca3aa41a8deb12",
+      "specificity": "default"
+    },
+    {
+      "name": "spec/spec_helper.rb",
+      "path": "spec/spec_helper.rb",
+      "checksum": "47e80af1de44f25168e05c2cccbfe33a",
+      "specificity": "default"
+    },
+    {
+      "name": "spec/default_spec.rb",
+      "path": "spec/unit/recipes/default_spec.rb",
+      "checksum": "021346480be2bfd8f9769ca9b2dda842",
+      "specificity": "default"
+    },
+    {
+      "name": "test/default_test.rb",
+      "path": "test/smoke/default/default_test.rb",
+      "checksum": "5a2909831602601d8f1b5c6a67ed86c8",
+      "specificity": "default"
+    }
+  ],
+  "metadata": {
+    "name": "windows_ad",
+    "description": "Installs/Configures windows_ad",
+    "long_description": "Installs/Configures windows_ad",
+    "maintainer": "The Authors",
+    "maintainer_email": "you@example.com",
+    "license": "All Rights Reserved",
+    "platforms": {
+
+    },
+    "dependencies": {
+
+    },
+    "providing": {
+      "windows_ad": ">= 0.0.0"
+    },
+    "attributes": {
+
+    },
+    "recipes": {
+      "windows_ad": ""
+    },
+    "version": "0.1.0",
+    "source_url": "",
+    "issues_url": "",
+    "privacy": false,
+    "chef_versions": [
+      [
+        ">= 12.1"
+      ]
+    ],
+    "ohai_versions": [
+
+    ],
+    "gems": [
+
+    ]
+  },
+  "version": "0.1.0",
+  "name": "windows_ad-0.1.0",
+  "cookbook_name": "windows_ad",
+  "frozen?": false,
+  "chef_type": "cookbook_version",
+  "json_class": "Chef::CookbookVersion"
+}
