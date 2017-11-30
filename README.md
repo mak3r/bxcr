@@ -12,6 +12,11 @@ You should have at least *16 GB* of RAM available to run these boxes.
 
 ## Usage
 1. Clone this repository.
+2. Install aws plugin `vagrant plugin install vagrant-aws`
+3. Get a dummy box and initalize it
+`$vagrant box add dummy https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box`
+
+
 2. Run `vagrant up` from the root of the code checkout. If this is your first time running it, it may take some time as Vagrant must pull a few gigabytes of base images.
 3. To add a Linux node to your Apprenda Cloud, run `vagrant up apprenda-linux`.
 4. To add a Kubernetes cluster to your Apprenda Cloud, run `vagrant up apprenda-k8s`.
